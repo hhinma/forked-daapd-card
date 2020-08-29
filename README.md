@@ -13,6 +13,7 @@ translate between SSL and non-SSL transports, eg NGINX.
 ## Requirements
 - Forked daapd built with websocket support.
 - Forked daapd setup as an media_player (mpd component) in Home Assistant
+- Reverse proxy or similar network configuration to translate between SSL/non-SSL
 
 ## Install
 
