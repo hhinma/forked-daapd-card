@@ -4,6 +4,10 @@ A lovelace card for [Home Assistant](https://github.com/home-assistant/home-assi
 This card allow you to control your forked daapd instance through Home Assistant.
 The following controls are available: `master volume`, `play/pause`, `next/previous`, `on/off`, `output selection`, `individual output volume`.
 
+This version uses wss and https rather than ws and http to access the daap server, to support HA instances that
+are accessed via https.  Since current versions of forked-daapd do not support SSL, a reverse proxy is required to
+translate between SSL and non-SSL transports, eg NGINX.
+
 <img src="https://user-images.githubusercontent.com/457678/46584235-03d92100-ca61-11e8-9d4d-969cbca7f88c.gif" alt="Preview" width="400">
 
 ## Requirements
@@ -28,7 +32,7 @@ resources:
 - Clone this repository into your `config/www` folder using git.
 
 ```bash
-git clone https://github.com/kalkih/forked-daapd-card.git
+git clone https://github.com/hhinma/forked-daapd-card.git
 ```
 
 - Add a reference to the card in your `ui-lovelace.yaml`.
