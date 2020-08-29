@@ -91,7 +91,7 @@ class ForkedDaapdCard extends LitElement {
   }
 
   async _initSocket() {
-    this.ws = new WebSocket('ws://' + this.config.ip + ':' + this.config.ws_port, 'notify');
+    this.ws = new WebSocket('wss://' + this.config.ip + ':' + this.config.ws_port, 'notify');
     this.ws.onopen = () => this._fetchOutputs();
     this.ws.onerror = () => this.ws = null;
     this.ws.onmessage = (message) => this._fetchOutputs();
@@ -99,7 +99,7 @@ class ForkedDaapdCard extends LitElement {
 
   async _fetchOutputs() {
     try {
-      const resp = await fetch('http://' + this.config.ip + ':' + this.config.port + '/api/outputs');
+      const resp = await fetch('https://' + this.config.ip + ':' + this.config.port + '/api/outputs');
       if (resp.ok) {
         let json = await resp.json();
         if (json.outputs) this.outputs = json.outputs;
