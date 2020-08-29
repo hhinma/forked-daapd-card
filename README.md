@@ -21,6 +21,7 @@ translate between SSL and non-SSL transports, eg NGINX.
 
 - Copy `forked-daapd-card.js` into your `config/www` ”folder.
 - Add a reference to the `forked-daapd-card.js` inside your `ui-lovelace.yaml`.
+- Add proxy configuration to your reverse proxy solution of choice.
 
 ```yaml
 resources:
@@ -43,6 +44,8 @@ resources:
   - url: /local/forked-daapd-card/forked-daapd-card.js?v=0.0.2
     type: module
 ```
+
+- Add proxy configuration to your reverse proxy solution of choice.
 
 ## Updating
 
