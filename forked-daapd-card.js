@@ -217,7 +217,7 @@ class ForkedDaapdCard extends LitElement {
       mode: 'cors',
       body: JSON.stringify(data)
     }
-    await fetch('http://' + this.config.ip + ':' + this.config.port + '/api/outputs/' + id, options);
+    await fetch('https://' + this.config.ip + ':' + this.config.port + '/api/outputs/' + id, options);
   }
 
   _computeMediaInfo() {
